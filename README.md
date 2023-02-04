@@ -69,10 +69,14 @@ codes: https://github.com/WorkInTheDark/FairytaleQA_QAG_System
 
 数据集：Webis-CausalQA-22
 
-要点：
+### 要点：
 
 1. Since neither SQuAD nor other large QA benchmarks explicitly label causal questions, the difference in effectiveness between causal and other questions remains unclear, We distinguish different types of causal questions using a novel typology derived from a data-driven, manual analysis of questions from ten large question answering (QA) datasets.
 
 2. we manually analyzed samples and developed a two-dimensional typology of causal questions based on their semantic properties and pragmatic interpretation
 
 3. To category the causal questiom:At the semantic level, we group causal question types in terms of which component of a causal chain a question addresses.  In two dimension: (1)Semantic Dimension: questions about an antecedent & questions about a consequent & questions about the chain （2）The Pragmatic Dimension: solution seeking, knowledge seeking, and opinion seeking.
+
+### Evaluation:
+
+1. ROUGE-L, recall, and F1 and traditional exact match (EM) and F1 measures
