@@ -40,3 +40,25 @@ codes:https://github.com/zhaozj89/Educational-Question-Generation
 1. Rouge-L score
 2. BERTScore (Zhang et al., 2020a) to evaluate the semantic similarity of generated questions with the ground-truth questions
 3. Krippendoff’s alpha scores for human evaluation
+
+## It is AI’s Turn to Ask Humans a Question: Question-Answer Pair Generation for Children’s Story Books
+
+datasets: FairytaleQA
+
+codes: https://github.com/WorkInTheDark/FairytaleQA_QAG_System
+
+## 要点：
+
+1. 和上一篇很像，但是更多的是直接问答形式的问题
+
+## 做法：
+
+1. to extract candidate answers from the given storybook passages through carefully designed heuristics based on a pedagogical framework; (2) to generate appropriate questions corresponding to each of the extracted answers using a state-of-the-art (SOTA) language model; and (3) to rank top QA-pairs with a specific threshold for the maximum amount of QA-pairs for each section
+
+2. 模型：a heuristics-based answer generation module (AG), followed by a BARTbased (Lewis et al., 2019) question generation module (QG) module fine-tuned on FairytaleQA dataset, and a DistilBERT-based(Sanh et al., 2019) ranking module fine-tuned on FairytaleQA dataset to rank and select top N QA-pairs for each input section.
+
+## Evaluation
+
+1. Mean Average Precision
+
+2. human evaluation：• Readability: The generated QA pair is in readable English grammar and words. • Question Relevancy: The generated question is relevant to the storybook section. • Answer Relevancy: The generated answer is relevant to the question.
