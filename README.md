@@ -80,3 +80,16 @@ codes: https://github.com/WorkInTheDark/FairytaleQA_QAG_System
 ### Evaluation:
 
 1. ROUGE-L, recall, and F1 and traditional exact match (EM) and F1 measures
+
+
+## RoViST: Learning Robust Metrics for Visual Storytelling
+
+代码：https://github.com/usydnlp/rovist
+
+数据集：StoryTelling
+
+### 要点：
+
+1. Nowadays, the past works on VST have used existing popular n-gram based metrics such as BLEU, METEOR, ROUGE, CIDEr, and SPICE to evaluate their models, such metrics based on n-gram matching tend to have poor correlation with human evaluation scores and do not explicitly consider other criteria necessary for storytelling such as sentence structure or topic coherence
+
+2. Thus we propose several unreferenced metrics for the VST task based on the three aforementioned criteria: 1) visual grounding, 2) coherence, and 3) non-redundancy
