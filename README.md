@@ -82,7 +82,7 @@ codes: https://github.com/WorkInTheDark/FairytaleQA_QAG_System
 1. ROUGE-L, recall, and F1 and traditional exact match (EM) and F1 measures
 
 
-## RoViST: Learning Robust Metrics for Visual Storytelling
+## RoViST: Learning Robust Metrics for Visual Storytelling(之后还需要细看每个evaluation怎么评分的）
 
 代码：https://github.com/usydnlp/rovist
 
@@ -90,6 +90,12 @@ codes: https://github.com/WorkInTheDark/FairytaleQA_QAG_System
 
 ### 要点：
 
-1. Nowadays, the past works on VST have used existing popular n-gram based metrics such as BLEU, METEOR, ROUGE, CIDEr, and SPICE to evaluate their models, such metrics based on n-gram matching tend to have poor correlation with human evaluation scores and do not explicitly consider other criteria necessary for storytelling such as sentence structure or topic coherence
+1. Nowadays, the past works on VST have used existing popular n-gram based metrics such as BLEU, METEOR, ROUGE, CIDEr, and SPICE to evaluate their models, such metrics based on n-gram matching tend to have poor correlation with human evaluation scores and do not explicitly consider other criteria necessary for storytelling such as sentence structure or topic coherence. In addition, these metrics mentioned so far still heavily rely on similarity with references, potentially leading to bias for VST tasks as the references may not fully cover the possible ways to write a story for an image sequence
 
 2. Thus we propose several unreferenced metrics for the VST task based on the three aforementioned criteria: 1) visual grounding, 2) coherence, and 3) non-redundancy
+
+3. i. visual ground: focus on norn, calculated by cos similiarity between text embedding and image embedding, multiplied by inverse document frequency 
+
+   ii. Coherence Scorer: calculated by the softmax function of pooled 1024dimensional vector representation hn, but what is pn? 
+   
+   iii. Non-redundancy Scorer:we propose calculating the Jaccard Similarity (JS) between and within sentences. The JS is defined as the intersection size divided by the union size of two sets. The result is a score between 0 and 1 where a value closer to 1 means that the story tends to contain less redundancy
