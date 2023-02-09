@@ -113,3 +113,19 @@ codes: https://github.com/WorkInTheDark/FairytaleQA_QAG_System
    ii. Coherence Scorer: calculated by the softmax function of pooled 1024dimensional vector representation hn, but what is pn? 
    
    iii. Non-redundancy Scorer:we propose calculating the Jaccard Similarity (JS) between and within sentences. The JS is defined as the intersection size divided by the union size of two sets. The result is a score between 0 and 1 where a value closer to 1 means that the story tends to contain less redundancy
+ 
+## Guiding Visual Question Generation
+
+代码：https://github.com/nihirv/guiding-vqg
+
+数据集：
+
+### 要点：
+
+1. 其中一个variant是根据答案种类，对象，和目标问题来生成问题？We use the answer category and objects/concepts based on an image and target question as inputs to our decoder. 或者这个explicit model感觉是根据场景来提问？但是为什么还会有算法随机？
+
+2. implicit variant 没太看懂。。
+
+3. contribution：The first work to explore guiding using object labels in Visual Question Generation; 2) A novel generative Transformer-based set-to-sequence approach for Visual Question Generation; 3) The first work to explore discrete variable models in Visual Question Generation; and 4) A substantial increase in quantitative metrics
+
+4。 方法：
