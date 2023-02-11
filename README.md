@@ -16,9 +16,26 @@
 
 ## Multi-VQG: Generating Engaging Questions for Multiple Images
 
-要点： 
+数据集：
 
-1. 
+### 要点： 
+
+1. motivation：However, most answers to questions in traditional questionanswering (QA) datasets are factoids, which reduce individuals’ willingness to answer. Furthermore, traditional visual question generation (VQG) confines the source data for question generation to single images, resulting in a limited ability to comprehend time-series information of the underlying event. Most questions are do not seek people to reply.
+
+2. The instruction to build the MVQG datasets:Our instruction, on the other hand, asked workers to imagine that they want to have a conversation with people on Twitter and hence to write a question to start that conversation.
+
+3. 模型总览:We choose VL-T5 (Cho et al., 2021) as the backbone in particular because it treats all VL tasks as text-generating tasks, which is appropriate for our question generation scenario. Inspired by Shen et al. (2022), we propose an additional baseline model by employing the visual encoder of CLIP (Radford et al., 2021) instead of the self-trained image feature extractor in our fusion encoder.
+
+4. 自己制作的数据集三原则：
+5. 分析了自己数据集里面以什么结构开头和like这种词的词频，来表示自己的数据集是engaged的
+6. 模型baseline model:
+(1) For the end-to-end baselines, we chose the VLT5 model (Cho et al., 2021) as the backbone
+
+### evaluation：
+
+1. 从问题的平均长度，句法复杂性等等去评价数据集中问题的质量
+2. To the generated question, 人为定了五个benchmark，吸引程度从低到高，（但感觉这样非常不靠谱），把baseline 分成四组分别测评，但其实每一组差距都很小，很容易产生biases，
+3. We evaluate the baselines with BLEU (Papineni et al., 2002), METEOR (Banerjee and Lavie, 2005), and BLEURT (Sellam et al., 2020).
 
 
 ## Let's Talk! Striking Up Conversations via Conversational Visual Question Generation
