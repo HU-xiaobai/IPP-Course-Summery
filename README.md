@@ -31,6 +31,8 @@
 6. 模型baseline model:
 (1) For the end-to-end baselines, we chose the VLT5 model (Cho et al., 2021) as the backbone
 
+7. Here we seek to determine whether the most relevant image can represent the entire image sequence, as questions can focus on only one certain event or object by calculating the CLIP scores. This suggests that other images in the sequence assist in the reconstruction of missing information and even leave room for more imagination
+
 ### evaluation：
 
 1. 从问题的平均长度，句法复杂性等等去评价数据集中问题的质量
