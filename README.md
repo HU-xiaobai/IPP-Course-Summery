@@ -42,10 +42,16 @@
 
 ## Let's Talk! Striking Up Conversations via Conversational Visual Question Generation
 
-要点：
+###要点：
 
 1. 总共分成两部分，先生成故事，再从故事生成问题
 2. 生成故事用到了知识图谱增强，问题生成用的是transformer fine-tuned
+(1) 第一阶段，知识图谱增强生成故事，input首先是image term sets 知识图谱告诉所有的term之间的relations, KG-Story uses a RNN-based language model to obtain a relation with lowest perplexity. The chosen relation is inserted to original term sequence expanding the number of term sets from 5 to 6. Then, KG-Story leverages Transformer (Vaswani et al. 2017) with expanded term sets from Stage 2 as input to generate story.
+(2) 第二阶段，T5 as pre-trained model，fine-tuned on SQuAD as output
+
+### evaluation：
+
+1. baselines: Generating Natural Questions About an Image
 
 ## Educational Question Generation of Children Storybooks via Question Type Distribution Learning and Event-Centric Summarization
 
