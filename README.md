@@ -175,3 +175,17 @@ We presented a guided approach to visual question generation (VQG), which allows
 
 ## Unifying Vision-and-Language Tasks via Text Generation
 
+## Learning Transferable Visual Models From Natural Language Supervision(CLIP)
+
+### 要点
+
+1. We demonstrate that the simple pre-training task of predicting which caption goes with which image is an efficient and scalable way to learn SOTA image representations from scratch on a dataset of 400 million (image, text) pairs collected from the internet.
+
+2. To test this we constructed a new dataset of 400 million (image, text) pairs collected form a variety of publicly available sources on the Internet(WebImageText) 
+
+3. While standard image models jointly train an image feature extractor and a linear classifier to predict some label, CLIP jointly trains an image encoder and a text encoder to predict the correct pairings of a batch of (image, text) training examples. 混合text/image encoder
+
+4. image encoder: (1) ResNet50 (2) ViT 
+   text encoder: transformer
+   
+5. CLIP is pre-trained to predict if an image and a text snippet are paired together in WIT.
