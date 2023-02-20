@@ -189,3 +189,5 @@ We presented a guided approach to visual question generation (VQG), which allows
    text encoder: transformer
    
 5. CLIP is pre-trained to predict if an image and a text snippet are paired together in WIT.
+
+6. To do this, CLIP learns a multi-modal embedding space by jointly training an image encoder and text encoder to maximize the cosine similarity of the image and text embeddings of the N real pairs in the batch while minimizing the cosine similarity of the embeddings of the N 2 − N incorrect pairings
