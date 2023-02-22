@@ -191,3 +191,23 @@ We presented a guided approach to visual question generation (VQG), which allows
 5. CLIP is pre-trained to predict if an image and a text snippet are paired together in WIT.
 
 6. To do this, CLIP learns a multi-modal embedding space by jointly training an image encoder and text encoder to maximize the cosine similarity of the image and text embeddings of the N real pairs in the batch while minimizing the cosine similarity of the embeddings of the N 2 − N incorrect pairings
+
+## Knowledge-Enriched Visual Storytelling
+
+### datasets: VIST Dataset provides image-to-term materials for learning in Stage 1. For Stage 2, the object relations from Visual Genome or the term relations from OpenIE are the materials for Stage 2. ROCStories Corpora supplies a large quantity of pure textual stories for generation in Stage 3, and the VIST Dataset, the sole end-to-end visual storytelling dataset, is used to fine-tune the model.
+
+### Key points:
+
+1. KG-Story distills a set of representative words from the input prompts, enriches the word set by using external knowledge graphs, and finally generates stories based on the enriched word set. This distill-enrich-generate framework allows the use of external resources not only for the enrichment phase, but also for the distillation and generation phases.
+
+2. motivation: However, existing visual storytelling approaches produce monotonous stories with repetitive text and low lexical diversity.
+
+3. Notice: they said However, each such caption is a single story-like sentence and is independent of other captions; combined, the captions do not constitute a context-coherent story.
+
+4. Stages: 1. Word distillation from input prompts/images. 2.Word enrichment using knowledge graphs 3.Story generation. We use a Transformer architecture to transform term paths into stories.
+
+5. Stage 1: pre-trained faster R-CNN, To reduce computational complexity, only the object features within the top 25 confidence scores are used. Main difference:In contrast to the positional encoding in the original setting, object features are summed with trainable image-order embeddings as input, as objects in the same image are sequentially independent.
+
+  Stage 2: we introduce semantic terms as the intermediate and link terms in two adjacent images using the relations provided by the knowledge graph. we pair the terms from two consecutive images and query the knowledge graph for all possible tuples and also consider the two-hop. Here the knowledge graph serves as the source of ideas connecting two images and the language model then ensures the coherence of the generated story when using the selected idea
+  
+  Stage 3: Generate story by transformer. We add to the original Transformer model three different modifications: (i) lengthdifference positional encoding for variable-length story generation, (ii) anaphoric expression generation for the unification of anaphor representation, and (iii) a repetition penalty for removing redundancy under beam search.
