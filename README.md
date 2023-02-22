@@ -211,3 +211,7 @@ We presented a guided approach to visual question generation (VQG), which allows
   Stage 2: we introduce semantic terms as the intermediate and link terms in two adjacent images using the relations provided by the knowledge graph. we pair the terms from two consecutive images and query the knowledge graph for all possible tuples and also consider the two-hop. Here the knowledge graph serves as the source of ideas connecting two images and the language model then ensures the coherence of the generated story when using the selected idea
   
   Stage 3: Generate story by transformer. We add to the original Transformer model three different modifications: (i) lengthdifference positional encoding for variable-length story generation, (ii) anaphoric expression generation for the unification of anaphor representation, and (iii) a repetition penalty for removing redundancy under beam search.
+  
+  ### evaluation:
+  
+  1. human rank and Observing Automatic Metrics: BLEU1 BLEU4 METEOR ROUGE CIDEr
