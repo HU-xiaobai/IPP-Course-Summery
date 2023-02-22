@@ -215,3 +215,13 @@ We presented a guided approach to visual question generation (VQG), which allows
   ### evaluation:
   
   1. human rank and Observing Automatic Metrics: BLEU1 BLEU4 METEOR ROUGE CIDEr
+
+## Commonsense Knowledge Aware Concept Selection for Diverse and Informative Visual Storytelling
+
+### code： https://github.com/sairin1202/Commonsense-Knowledge-Aware-Concept-Selection-For-Diverse-and-Informative-Visual-Storytelling
+
+### Datasets: 
+
+### key points:
+
+
