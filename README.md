@@ -239,7 +239,29 @@ We presented a guided approach to visual question generation (VQG), which allows
 ### evaluation:
 
 1. automatic: We report BLEU (B), METEOR (M), ROUGH-L (R), and CIDEr (C) scores.
-2. human evaluation:
+2. human evaluation: ranking
+
+## What Makes A Good Story? Designing Composite Rewards for Visual Storytelling
+
+### datasets: VIST
+
+### baselines: (1) AREL (Wang et al. 2018b) (2) HSRL (Huang et al. 2019)
+
+### codes:
+
+### keypoints:
+
+1. Motivation: Notably, current studies did not directly (or explicitly) examine what accounts for a good story to the human eye, which is the main focus of our work.
+
+2. we propose three assessment criteria: relevance, coherence and expressiveness. We further propose a reinforcement learning framework, ReCo-RL, with reward functions designed to capture the essence of these quality criteria. In addition, we find that simply optimizing on standard automatic evaluation metrics may even hurt the performance of story generation according to other assessments that are more important to the human eye.
+
+3. Dimension explaination: 1) Relevance: telling a story that accurately describes the objects and the concepts that appear in the photos. 2) Coherence: the consecutive sentences should be semantically and logically coherent with each other, instead of being mutually-independent sentences describing each photo separately. 3) Expressiveness: describe the visual scenes and actions in the photos, the language used for creating the story should contain a rich vocabulary and diverse style
+
+4. The first relevance function gives a high reward to a generated description that mentions fine-grained concepts in an image. The second coherence function measures the fluency of a generated sentence given its preceding sentence, using a pre-trained language model. The third expressiveness function penalizes phrasal overlap between a generated sentence and its preceding sentences.
+
+5. Model structure: Encoder(CNN), manager(RNN), worker(LSTM).
+
+**idea: I notice that most storytelling are ignore the conjunction, could not connect various events relations such as causal inference etc. maybe it is a gap. For our propose, could we propose a question like why.... after?** 
 
  
 
