@@ -263,6 +263,17 @@ We presented a guided approach to visual question generation (VQG), which allows
 
 **idea: I notice that most storytelling are ignore the conjunction, could not connect various events relations such as causal inference etc. maybe it is a gap. For our propose, could we propose a question like why.... after?** 
 
+## Learning to Rank Visual Stories from Human Ranking Data
+
+### codes: https://github.com/academiasinicanlplab/vhed
+
+### datasets:
+
+### keypoints:
+
+1. motivation: It remains unclear whether conventional automatic evaluation metrics for text generation are applicable on VIST. In addition, they show that the results from commonly adopted automatic metrics for text generation have little correlation with those obtained from human evaluation, which motivates us to directly utilize human evaluation results to learn the automatic evaluation model. In other words, existing evaluation methods are unable to capture the true quality of the generated stories.
+
+2. Rethinking this postulation in evaluation, we believe the dependence on references should be minimized and human evaluation results should be fully utilized instead, because human judgements contain more meaningful signals.
  
 
 
