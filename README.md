@@ -220,20 +220,18 @@ We presented a guided approach to visual question generation (VQG), which allows
 
 ### code： https://github.com/sairin1202/Commonsense-Knowledge-Aware-Concept-Selection-For-Diverse-and-Informative-Visual-Storytelling
 
+###
+
 ### key point:
 
-1. We propose to foster the diversity and informativeness of a generated story by using a concept selection module that suggests a set of concept candidates
+1. We propose to foster the diversity and informativeness of a generated story by using a concept selection module that suggests a set of concept candidates. In other words, we aim to improve the concept selection for increasing the diversity and informativeness of VST.
 
 2. motivation: it is shown that the stories tend to be monotonous which contains limited lexical diversity and knowledge. However, their method directly generates concepts from the images using sequenceto-sequence models. Since the concept is selected from the full vocabulary, this kind of direct generation often produces concepts of low quality which affects the informativeness of the story.
 
 3. Totally the first stage:two novel modules SSM and MCSM to select concepts from the given candidates concepts under a plan-write two-stage visual storytelling system. The second steps: modified BART as our story generation module to mitigate the problem caused by limited vocabulary and knowledge in the dataset.
 
-4. 
+4. How to select: 1. We send the images into ResNet152 (He et al. 2016) to obtain image features 2.we use clarifai1 to obtain the top 10 seed concepts from each image. Each concept is used as a query to select relative commonsense concepts in the ConceptNet and we make several rules to filter some concepts which are less useful 3.To incorporate the visual information into the concepts, we also connect the image feature to its corresponding concept features in the graph.  4. to select the concept, from SSM model, updated concept features into the encoder, and the decoder will output the selected concepts, finally the concept with the highest probability is selected as the output concept, while its feature is directly copied for the generation of the next step. From MCSM model, this method aims to calculate the co-occurrence probability of all candidate concepts cs in the graph.
 
-### Datasets: 
-
-### key points:
-
-1. We propose to foster the diversity and informativeness of a generated story by using a concept selection module that suggests a set of concept candidates.
+ 
 
 
