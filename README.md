@@ -177,7 +177,7 @@ We presented a guided approach to visual question generation (VQG), which allows
 
 ## Learning Transferable Visual Models From Natural Language Supervision(CLIP)
 
-### 要点
+### keypoints:
 
 1. We demonstrate that the simple pre-training task of predicting which caption goes with which image is an efficient and scalable way to learn SOTA image representations from scratch on a dataset of 400 million (image, text) pairs collected from the internet.
 
@@ -194,7 +194,9 @@ We presented a guided approach to visual question generation (VQG), which allows
 
 ## Knowledge-Enriched Visual Storytelling
 
-### datasets: VIST Dataset provides image-to-term materials for learning in Stage 1. For Stage 2, the object relations from Visual Genome or the term relations from OpenIE are the materials for Stage 2. ROCStories Corpora supplies a large quantity of pure textual stories for generation in Stage 3, and the VIST Dataset, the sole end-to-end visual storytelling dataset, is used to fine-tune the model.
+### datasets: 
+
+VIST Dataset provides image-to-term materials for learning in Stage 1. For Stage 2, the object relations from Visual Genome or the term relations from OpenIE are the materials for Stage 2. ROCStories Corpora supplies a large quantity of pure textual stories for generation in Stage 3, and the VIST Dataset, the sole end-to-end visual storytelling dataset, is used to fine-tune the model.
 
 ### Key points:
 
