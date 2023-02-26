@@ -38,23 +38,25 @@
 
 3. Model Structure:We choose VL-T5 (Cho et al., 2021) as the backbone in particular because it treats all VL tasks as text-generating tasks, which is appropriate for our question generation scenario. Inspired by Shen et al. (2022), we propose an additional baseline model by employing the visual encoder of CLIP (Radford et al., 2021) instead of the self-trained image feature extractor in our fusion encoder.
 
-4. 自己制作的数据集三原则：
-5. 分析了自己数据集里面以什么结构开头和like这种词的词频，来表示自己的数据集是engaged的
-6. 模型baseline model:
+4. Three principles for self-made datasets
+
+5. Analyse the starting structure of the private datasets and the word frequency to show that the private dataset is reasonable to the engage question
+
+6. baseline model:
 (1) For the end-to-end baselines, we chose the VLT5 model (Cho et al., 2021) as the backbone
 
 7. Here we seek to determine whether the most relevant image can represent the entire image sequence, as questions can focus on only one certain event or object by calculating the CLIP scores. This suggests that other images in the sequence assist in the reconstruction of missing information and even leave room for more imagination
 
 ### evaluation：
 
-1. 从问题的平均长度，句法复杂性等等去评价数据集中问题的质量
-2. To the generated question, 人为定了五个benchmark，吸引程度从低到高，（但感觉这样非常不靠谱），把baseline 分成四组分别测评，但其实每一组差距都很小，很容易产生biases，
+1. Evaluate the quality of problems in the dataset from the average length of the problem, syntactic complexity, etc
+2. To the generated question, set private engaging benchmark by the author ，engage degree from high to low，（but I think it is very unreasonable），Baseline is divided into four groups to evaluate separately, but in fact, the gap between each group is very small, and I think it is easy to produce biases，
 3. We evaluate the baselines with BLEU (Papineni et al., 2002), METEOR (Banerjee and Lavie, 2005), and BLEURT (Sellam et al., 2020).
 
 
 ## Let's Talk! Striking Up Conversations via Conversational Visual Question Generation
 
-###要点：
+### Keypoints：
 
 1. 总共分成两部分，先生成故事，再从故事生成问题
 2. 生成故事用到了知识图谱增强，问题生成用的是transformer fine-tuned
