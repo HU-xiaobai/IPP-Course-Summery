@@ -17,10 +17,10 @@
 # Contents  
 - [Multiple images Question Generation](#Multiple-images-Question-Generation)  
 - [Question Generation based Question types](#Question-Generation-based-Question-types)  
-- [Design idea and innovation point](#design-idea-and-innovation-point)  
-  - [Background](#background) 
-  - [Design inspirations](#design-inspirations) 
-  - [Innovation point](#innovation-point)  
+- [Current Evaluation of Visual Storytelling](#Current-Evaluation-of-Visual-Storytelling)  
+- [Background](#background) 
+- [Design inspirations](#design-inspirations) 
+- [Innovation point](#innovation-point)  
   - [Developmental vision](#developmental-vision) 
 
 # Multiple images Question Generation:
@@ -114,26 +114,6 @@ codes: https://github.com/WorkInTheDark/FairytaleQA_QAG_System
 1. Mean Average Precision
 
 2. human evaluation：• Readability: The generated QA pair is in readable English grammar and words. • Question Relevancy: The generated question is relevant to the storybook section. • Answer Relevancy: The generated answer is relevant to the question.
-
-# Interesting paper related causal question
-
-## CausalQA: A Benchmark for Causal Question Answering
-
-Code：https://github.com/webis-de/coling-22
-
-Datasets：Webis-CausalQA-22
-
-### Keypoints：
-
-1. Since neither SQuAD nor other large QA benchmarks explicitly label causal questions, the difference in effectiveness between causal and other questions remains unclear, We distinguish different types of causal questions using a novel typology derived from a data-driven, manual analysis of questions from ten large question answering (QA) datasets.
-
-2. we manually analyzed samples and developed a two-dimensional typology of causal questions based on their semantic properties and pragmatic interpretation
-
-3. To category the causal questiom:At the semantic level, we group causal question types in terms of which component of a causal chain a question addresses.  In two dimension: (1)Semantic Dimension: questions about an antecedent & questions about a consequent & questions about the chain （2）The Pragmatic Dimension: solution seeking, knowledge seeking, and opinion seeking.
-
-### Evaluation:
-
-1. ROUGE-L, recall, and F1 and traditional exact match (EM) and F1 measures
 
 # Current Evaluation of Visual Storytelling  
 
@@ -301,6 +281,26 @@ VIST Dataset provides image-to-term materials for learning in Stage 1. For Stage
 
 1. automatic: We report BLEU (B), METEOR (M), ROUGH-L (R), and CIDEr (C) scores.
 2. human evaluation: ranking
+
+# Interesting Paper Related Causal Question
+
+## CausalQA: A Benchmark for Causal Question Answering
+
+Code：https://github.com/webis-de/coling-22
+
+Datasets：Webis-CausalQA-22
+
+### Keypoints：
+
+1. Since neither SQuAD nor other large QA benchmarks explicitly label causal questions, the difference in effectiveness between causal and other questions remains unclear, We distinguish different types of causal questions using a novel typology derived from a data-driven, manual analysis of questions from ten large question answering (QA) datasets.
+
+2. we manually analyzed samples and developed a two-dimensional typology of causal questions based on their semantic properties and pragmatic interpretation
+
+3. To category the causal questiom:At the semantic level, we group causal question types in terms of which component of a causal chain a question addresses.  In two dimension: (1)Semantic Dimension: questions about an antecedent & questions about a consequent & questions about the chain （2）The Pragmatic Dimension: solution seeking, knowledge seeking, and opinion seeking.
+
+### Evaluation:
+
+1. ROUGE-L, recall, and F1 and traditional exact match (EM) and F1 measures
 
 
 
