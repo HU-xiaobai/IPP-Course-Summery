@@ -14,17 +14,19 @@
 
 ### Interested point:
 
+# Multiple images Question Generation:
+
 ## Multi-VQG: Generating Engaging Questions for Multiple Images
 
-数据集：
+### Datasets：https://github.com/academiasinicanlplab/mvqg-dataset-of-generating-engaging-questions-for-multiple-images
 
-### 要点： 
+### Keypoint： 
 
-1. motivation：However, most answers to questions in traditional questionanswering (QA) datasets are factoids, which reduce individuals’ willingness to answer. Furthermore, traditional visual question generation (VQG) confines the source data for question generation to single images, resulting in a limited ability to comprehend time-series information of the underlying event. Most questions are do not seek people to reply.
+1. Motivation：However, most answers to questions in traditional questionanswering (QA) datasets are factoids, which reduce individuals’ willingness to answer. Furthermore, traditional visual question generation (VQG) confines the source data for question generation to single images, resulting in a limited ability to comprehend time-series information of the underlying event. Most questions are do not seek people to reply.
 
 2. The instruction to build the MVQG datasets:Our instruction, on the other hand, asked workers to imagine that they want to have a conversation with people on Twitter and hence to write a question to start that conversation.
 
-3. 模型总览:We choose VL-T5 (Cho et al., 2021) as the backbone in particular because it treats all VL tasks as text-generating tasks, which is appropriate for our question generation scenario. Inspired by Shen et al. (2022), we propose an additional baseline model by employing the visual encoder of CLIP (Radford et al., 2021) instead of the self-trained image feature extractor in our fusion encoder.
+3. Model Structure:We choose VL-T5 (Cho et al., 2021) as the backbone in particular because it treats all VL tasks as text-generating tasks, which is appropriate for our question generation scenario. Inspired by Shen et al. (2022), we propose an additional baseline model by employing the visual encoder of CLIP (Radford et al., 2021) instead of the self-trained image feature extractor in our fusion encoder.
 
 4. 自己制作的数据集三原则：
 5. 分析了自己数据集里面以什么结构开头和like这种词的词频，来表示自己的数据集是engaged的
@@ -52,6 +54,8 @@
 ### evaluation：
 
 1. baselines: Generating Natural Questions About an Image
+
+# Question Generation based Question types
 
 ## Educational Question Generation of Children Storybooks via Question Type Distribution Learning and Event-Centric Summarization
 
@@ -102,13 +106,15 @@ codes: https://github.com/WorkInTheDark/FairytaleQA_QAG_System
 
 2. human evaluation：• Readability: The generated QA pair is in readable English grammar and words. • Question Relevancy: The generated question is relevant to the storybook section. • Answer Relevancy: The generated answer is relevant to the question.
 
+# Interesting paper related causal question
+
 ## CausalQA: A Benchmark for Causal Question Answering
 
-代码：https://github.com/webis-de/coling-22
+Code：https://github.com/webis-de/coling-22
 
-数据集：Webis-CausalQA-22
+Datasets：Webis-CausalQA-22
 
-### 要点：
+### Keypoints：
 
 1. Since neither SQuAD nor other large QA benchmarks explicitly label causal questions, the difference in effectiveness between causal and other questions remains unclear, We distinguish different types of causal questions using a novel typology derived from a data-driven, manual analysis of questions from ten large question answering (QA) datasets.
 
@@ -120,6 +126,7 @@ codes: https://github.com/WorkInTheDark/FairytaleQA_QAG_System
 
 1. ROUGE-L, recall, and F1 and traditional exact match (EM) and F1 measures
 
+# Current Evaluation of Visual Storytelling  
 
 ## RoViST: Learning Robust Metrics for Visual Storytelling(之后还需要细看每个evaluation怎么评分的）
 
@@ -138,6 +145,43 @@ codes: https://github.com/WorkInTheDark/FairytaleQA_QAG_System
    ii. Coherence Scorer: calculated by the softmax function of pooled 1024dimensional vector representation hn, but what is pn? 
    
    iii. Non-redundancy Scorer:we propose calculating the Jaccard Similarity (JS) between and within sentences. The JS is defined as the intersection size divided by the union size of two sets. The result is a score between 0 and 1 where a value closer to 1 means that the story tends to contain less redundancy
+
+## What Makes A Good Story? Designing Composite Rewards for Visual Storytelling
+
+### datasets: VIST
+
+### baselines: (1) AREL (Wang et al. 2018b) (2) HSRL (Huang et al. 2019)
+
+### codes:
+
+### keypoints:
+
+1. Motivation: Notably, current studies did not directly (or explicitly) examine what accounts for a good story to the human eye, which is the main focus of our work.
+
+2. we propose three assessment criteria: relevance, coherence and expressiveness. We further propose a reinforcement learning framework, ReCo-RL, with reward functions designed to capture the essence of these quality criteria. In addition, we find that simply optimizing on standard automatic evaluation metrics may even hurt the performance of story generation according to other assessments that are more important to the human eye.
+
+3. Dimension explaination: 1) Relevance: telling a story that accurately describes the objects and the concepts that appear in the photos. 2) Coherence: the consecutive sentences should be semantically and logically coherent with each other, instead of being mutually-independent sentences describing each photo separately. 3) Expressiveness: describe the visual scenes and actions in the photos, the language used for creating the story should contain a rich vocabulary and diverse style
+
+4. The first relevance function gives a high reward to a generated description that mentions fine-grained concepts in an image. The second coherence function measures the fluency of a generated sentence given its preceding sentence, using a pre-trained language model. The third expressiveness function penalizes phrasal overlap between a generated sentence and its preceding sentences.
+
+5. Model structure: Encoder(CNN), manager(RNN), worker(LSTM).
+
+**idea: I notice that most storytelling are ignore the conjunction, could not connect various events relations such as causal inference etc. maybe it is a gap. For our propose, could we propose a question like why.... after?** 
+
+## Learning to Rank Visual Stories from Human Ranking Data
+
+### codes: https://github.com/academiasinicanlplab/vhed
+
+### datasets:
+
+### keypoints:
+
+1. motivation: It remains unclear whether conventional automatic evaluation metrics for text generation are applicable on VIST. In addition, they show that the results from commonly adopted automatic metrics for text generation have little correlation with those obtained from human evaluation, which motivates us to directly utilize human evaluation results to learn the automatic evaluation model. In other words, existing evaluation methods are unable to capture the true quality of the generated stories.
+
+2. Rethinking this postulation in evaluation, we believe the dependence on references should be minimized and human evaluation results should be fully utilized instead, because human judgements contain more meaningful signals.
+ 
+   
+# Current Visual Question Generation
  
 ## Guiding Visual Question Generation
 
@@ -173,6 +217,10 @@ We compare our models with four recently proposed VQG models Information Maximis
 
 We presented a guided approach to visual question generation (VQG), which allows for the generation of questions that focus on specific chosen aspects of the input image. We introduced three variants for this task, the explicit, implicit, and variational implicit. The former generates questions based on an explicit answer category and a set of concepts from the image. In contrast, the latter two discretely predict these concepts internally, receiving only the image as input. The explicit model achieves SoTA results when evaluated against comparable models.
 
+# Current Methogology 
+
+# Pre-trained Language Model
+
 ## Unifying Vision-and-Language Tasks via Text Generation
 
 ## Learning Transferable Visual Models From Natural Language Supervision(CLIP)
@@ -191,6 +239,8 @@ We presented a guided approach to visual question generation (VQG), which allows
 5. CLIP is pre-trained to predict if an image and a text snippet are paired together in WIT.
 
 6. To do this, CLIP learns a multi-modal embedding space by jointly training an image encoder and text encoder to maximize the cosine similarity of the image and text embeddings of the N real pairs in the batch while minimizing the cosine similarity of the embeddings of the N 2 − N incorrect pairings
+
+# Knowledge Enhance Methods
 
 ## Knowledge-Enriched Visual Storytelling
 
@@ -243,39 +293,6 @@ VIST Dataset provides image-to-term materials for learning in Stage 1. For Stage
 1. automatic: We report BLEU (B), METEOR (M), ROUGH-L (R), and CIDEr (C) scores.
 2. human evaluation: ranking
 
-## What Makes A Good Story? Designing Composite Rewards for Visual Storytelling
 
-### datasets: VIST
-
-### baselines: (1) AREL (Wang et al. 2018b) (2) HSRL (Huang et al. 2019)
-
-### codes:
-
-### keypoints:
-
-1. Motivation: Notably, current studies did not directly (or explicitly) examine what accounts for a good story to the human eye, which is the main focus of our work.
-
-2. we propose three assessment criteria: relevance, coherence and expressiveness. We further propose a reinforcement learning framework, ReCo-RL, with reward functions designed to capture the essence of these quality criteria. In addition, we find that simply optimizing on standard automatic evaluation metrics may even hurt the performance of story generation according to other assessments that are more important to the human eye.
-
-3. Dimension explaination: 1) Relevance: telling a story that accurately describes the objects and the concepts that appear in the photos. 2) Coherence: the consecutive sentences should be semantically and logically coherent with each other, instead of being mutually-independent sentences describing each photo separately. 3) Expressiveness: describe the visual scenes and actions in the photos, the language used for creating the story should contain a rich vocabulary and diverse style
-
-4. The first relevance function gives a high reward to a generated description that mentions fine-grained concepts in an image. The second coherence function measures the fluency of a generated sentence given its preceding sentence, using a pre-trained language model. The third expressiveness function penalizes phrasal overlap between a generated sentence and its preceding sentences.
-
-5. Model structure: Encoder(CNN), manager(RNN), worker(LSTM).
-
-**idea: I notice that most storytelling are ignore the conjunction, could not connect various events relations such as causal inference etc. maybe it is a gap. For our propose, could we propose a question like why.... after?** 
-
-## Learning to Rank Visual Stories from Human Ranking Data
-
-### codes: https://github.com/academiasinicanlplab/vhed
-
-### datasets:
-
-### keypoints:
-
-1. motivation: It remains unclear whether conventional automatic evaluation metrics for text generation are applicable on VIST. In addition, they show that the results from commonly adopted automatic metrics for text generation have little correlation with those obtained from human evaluation, which motivates us to directly utilize human evaluation results to learn the automatic evaluation model. In other words, existing evaluation methods are unable to capture the true quality of the generated stories.
-
-2. Rethinking this postulation in evaluation, we believe the dependence on references should be minimized and human evaluation results should be fully utilized instead, because human judgements contain more meaningful signals.
- 
 
 
