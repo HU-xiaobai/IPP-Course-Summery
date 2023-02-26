@@ -15,8 +15,8 @@
 ### Interested point:
 
 # Contents  
-- [Multiple images Question Generation](#Multiple images Question Generation)  
-- [Question Generation based Question types](#Question Generation based Question types)  
+- [Multiple images Question Generation](#Multiple-images-Question-Generation)  
+- [Question Generation based Question types](#Question-Generation-based-Question-types)  
 - [Design idea and innovation point](#design-idea-and-innovation-point)  
   - [Background](#background) 
   - [Design inspirations](#design-inspirations) 
