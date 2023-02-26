@@ -18,10 +18,11 @@
 - [Multiple images Question Generation](#Multiple-images-Question-Generation)  
 - [Question Generation based Question types](#Question-Generation-based-Question-types)  
 - [Current Evaluation of Visual Storytelling](#Current-Evaluation-of-Visual-Storytelling)  
-- [Background](#background) 
-- [Design inspirations](#design-inspirations) 
-- [Innovation point](#innovation-point)  
-  - [Developmental vision](#developmental-vision) 
+- [Current Visual Question Generation](#Current-Visual-Question-Generation) 
+- [Current Methogology on Visual-Language Tasks or Visual Question Generation/Storytelling](#Current-Methogology-on-Visual-Language-Tasks-or-Visual-Question Generation/Storytelling) 
+  - [Pre-trained Language Model](#Pre-trained-Language-Model)  
+  - [Knowledge Enhance Methods](#Knowledge-Enhance-Methods)
+- [Interesting Paper Related Causal Question](#Interesting-Paper-Related-Causal-Question) 
 
 # Multiple images Question Generation:
 
@@ -206,7 +207,7 @@ We compare our models with four recently proposed VQG models Information Maximis
 
 We presented a guided approach to visual question generation (VQG), which allows for the generation of questions that focus on specific chosen aspects of the input image. We introduced three variants for this task, the explicit, implicit, and variational implicit. The former generates questions based on an explicit answer category and a set of concepts from the image. In contrast, the latter two discretely predict these concepts internally, receiving only the image as input. The explicit model achieves SoTA results when evaluated against comparable models.
 
-# Current Methogology 
+# Current Methogology on Visual-Language Tasks or Visual Question Generation/Storytelling
 
 # Pre-trained Language Model
 
