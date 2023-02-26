@@ -19,7 +19,7 @@
 - [Question Generation based Question types](#Question-Generation-based-Question-types)  
 - [Current Evaluation of Visual Storytelling](#Current-Evaluation-of-Visual-Storytelling)  
 - [Current Visual Question Generation](#Current-Visual-Question-Generation) 
-- [Current Methogology on Visual-Language Tasks or Visual Question Generation/Storytelling](# Current-Methogology-on-Visual-Language-Tasks-or-Visual-Question-Generation/Storytelling) 
+- [Current Methogology on Visual-Language Tasks or Visual Question Generation/Storytelling](#Current-Methogology-on-Visual-Language-Tasks-or-Visual-Question-Generation/Storytelling) 
   - [Pre-trained Language Model](#Pre-trained-Language-Model)  
   - [Knowledge Enhance Methods](#Knowledge-Enhance-Methods)
 - [Interesting Paper Related Causal Question](#Interesting-Paper-Related-Causal-Question) 
