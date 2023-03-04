@@ -217,11 +217,19 @@ We presented a guided approach to visual question generation (VQG), which allows
 
 ### Keypoint:
 
+Overview of Vision-Language Model: Given a text sentence l and an image v, a VLP model first extracts both text features l = ⟨l1, · · · , lN ⟩ and visual features v = ⟨v1, · · · , vM ⟩ via a text encoder and a vision encoder. The text and visual features are then fed into a multimodal fusion module to produce cross-modal representations, which are then optionally fed into a decoder before generating the final outputs.
+
 1. We present METER, a Multimodal End-to-end TransformER framework, through which we thoroughly investigate how to design and pre-train a fully transformer based VLP model in an end-to-end manner.
 
 2. They seperate vision-language tasks as several parts: vision ecoder, language encoder and fusion model, with only encoder or encoder-decoder structure. They analysis that: 1) Vision transformer (ViT) plays a more vital role than language transformer in VLP, and the performance of transformers on pure vision or language tasks is not a good indicator for its performance on VL tasks. 2) The inclusion of cross-attention benefits multimodal fusion, which results in better downstream performance than using self-attention alone. 3) Under a fair comparison setup, the encoder-only VLP model performs better than the encoder-decoder model for VQA and zero-shot image-text retrieval tasks. 4) Adding the masked image modeling loss in VLP will not improve downstream task performance in our settings
 
 3. Drawback of current vision model: 1)Object detector feature extractor:such as ViLBERT, LXMERT, VisualBERT, VL-BERT, UNITER, OSCAR and VinVL, however, extracting region features can be timeconsuming, and the pre-trained ODs are usually frozen during pre-training, which limits the capacity of VLP models 2) CNN-based Grid Features: such as PixelBERT, CLIP-ViL, SOHO, although it is efficient,  inconsistent optimizers are typically used for CNN and transformer, and CNN can achieve slightly worse accuracy/FLOPs trade-offs than their ViT counterparter.
+
+4. for the text encoder: the fusion module is typically initialized with BERT, and the role of text encoding and multimodal fusion is therefore entangled and absorbed in a single BERT model. Here, we aim to disentangle the two modules, and use a text encoder first before sending the features into the fusion module.
+
+5. fusion part: Merged attention and co-attention. Figure 2 of the paper. For region-based VLP models, as shown, the merged attention and co-attention models can achieve comparable performance. Yet, the merged attention module is more parameter-efficient, as the same set of parameters are used for both modalities.
+
+6. 1)Masked Language Modeling: Specifically, given an image-caption pair, we randomly mask some of the input tokens, and the model is trained to reconstruct the original tokens given the masked tokens lmask and its corresponding visual input v. 2) Masked image Modeling: Formally, given a sequence of visual features v = ⟨v1, · · · , vM ⟩, where vi is typically a region feature, we randomly mask some of the visual features, and the model outputs the reconstructed visual features ov given the rest of the visual features and the unmasked tokens t, and regression aims to minimize the mean squared error loss. the author use patch to do the task of MIM, but what the patch actually mean?
 
 ## Unifying Vision-and-Language Tasks via Text Generation
 
