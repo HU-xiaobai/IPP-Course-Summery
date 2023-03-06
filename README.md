@@ -233,11 +233,11 @@ Overview of Vision-Language Model: Given a text sentence l and an image v, a VLP
 
 ## How Much Can CLIP Benefit Vision-and-Language Tasks?
 
-## Datasets: VQAv2, COCO, Room-to-Room navigation. (Visual Question Answering, Image Captioning, and Vision-and-Language Navigation)
+### Datasets: VQAv2, COCO, Room-to-Room navigation. (Visual Question Answering, Image Captioning, and Vision-and-Language Navigation)
 
-## Codes: https://github.com/clip-vil/CLIP-ViL
+### Codes: https://github.com/clip-vil/CLIP-ViL
 
-##keypoints:
+### keypoints:
 
 1. We propose to use CLIP as the visual encoder in various V&L models in two typical scenarios: 1) plugging CLIP into task-specific fine-tuning; 2) combining CLIP with V&L pre-training and transferring to downstream tasks.
 
