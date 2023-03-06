@@ -231,6 +231,18 @@ Overview of Vision-Language Model: Given a text sentence l and an image v, a VLP
 
 6. 1)Masked Language Modeling: Specifically, given an image-caption pair, we randomly mask some of the input tokens, and the model is trained to reconstruct the original tokens given the masked tokens lmask and its corresponding visual input v. 2) Masked image Modeling: Formally, given a sequence of visual features v = ⟨v1, · · · , vM ⟩, where vi is typically a region feature, we randomly mask some of the visual features, and the model outputs the reconstructed visual features ov given the rest of the visual features and the unmasked tokens t, and regression aims to minimize the mean squared error loss. the author use patch to do the task of MIM, but what the patch actually mean?
 
+## How Much Can CLIP Benefit Vision-and-Language Tasks?
+
+## Datasets: VQAv2, COCO, Room-to-Room navigation. (Visual Question Answering, Image Captioning, and Vision-and-Language Navigation)
+
+## Codes: https://github.com/clip-vil/CLIP-ViL
+
+##keypoints:
+
+1. We propose to use CLIP as the visual encoder in various V&L models in two typical scenarios: 1) plugging CLIP into task-specific fine-tuning; 2) combining CLIP with V&L pre-training and transferring to downstream tasks.
+
+2. CLIP seems to have a huge benefit to VQA, increase VQA by about 3-4 %. And the pretrained senario is better than the first fine-tuned one, which increase 3-4%. 
+
 ## Unifying Vision-and-Language Tasks via Text Generation
 
 ## Learning Transferable Visual Models From Natural Language Supervision(CLIP)
