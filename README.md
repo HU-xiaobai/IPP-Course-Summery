@@ -31,6 +31,29 @@
 
 ## NExT-QA: Next Phase of Question-Answering to Explaining Temporal Actions
 
+## Video Graph Transformer for Video Question Answering
+
+### codes:https://github.com/sail-sg/VGT
+
+### datasets: NexT-QA TGIF-QA
+
+### keypoint:
+
+1. mainly done two things: 1) it designs a dynamic graph transformer module which encodes video by explicitly capturing the visual objects, their relations, and dynamics for complex spatio-temporal reasoning; 2) it exploits disentangled video and text Transformers for relevance comparison between the video and text to perform QA, instead of entangled cross-modal Transformer for answer classification.
+
+2. The author pointed out the two main problems about the failure of causal inference & temporal within video QA: 1) Video encoders are overly simplistic. 2) Formulation of VideoQA problem is sub-optimal
+
+## Revisiting the “Video” in Video-Language Understanding
+
+### codes: https://github.com/StanfordVL/atp-video-language
+
+### keypoint:
+
+1. motivation: Our driving question is, to what extent can image-level understanding obtained from a single frame (well-chosen, without temporal context) address the current landscape of video-language tasks?
+2. The ATP model is tasked with finding a single (frozen, image-derived) embedding from the video and forwarding this to the downstream video-language task.
+
+
+
 # Multiple images Question Generation:
 
 ## Multi-VQG: Generating Engaging Questions for Multiple Images
