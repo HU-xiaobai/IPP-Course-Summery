@@ -51,6 +51,7 @@
 
 1. motivation: Our driving question is, to what extent can image-level understanding obtained from a single frame (well-chosen, without temporal context) address the current landscape of video-language tasks?
 2. The ATP model is tasked with finding a single (frozen, image-derived) embedding from the video and forwarding this to the downstream video-language task.
+3. In the broader context of a video-language task, such as video question answering, our ATP model must learn to select a single (frozen, image-derived) embedding that can provide as strong a signal as possible for the final task.
 
 
 
