@@ -53,7 +53,24 @@
 2. The ATP model is tasked with finding a single (frozen, image-derived) embedding from the video and forwarding this to the downstream video-language task.
 3. In the broader context of a video-language task, such as video question answering, our ATP model must learn to select a single (frozen, image-derived) embedding that can provide as strong a signal as possible for the final task.
 
+## Video as Conditional Graph Hierarchy for Multi-Granular Question Answering
 
+### codes: https://github.com/doc-doc/hqga
+
+### keypoints:
+
+1. In this work, we argue that while video is presented in frame sequence, the visual elements (e.g., objects, actions, activities and events) are not sequential but rather hierarchical in semantic space.
+2. how to abstract the clip/frame from video:We extract a video at p frames per second and then partition it into K clips of length L. For each clip, we maintain a dense stream of L frames to obtain the clip-level motion feature and a sparse stream of xL frames (x ∈ (0; 1)) to obtain the region and frame appearance features.
+3. motivition:The limitations of post-hoc explainability inspire us to explore the paradigm of intrinsic interpretability [9, 34], which embeds a rationalization module into the model to make the decision-making process transparent.
+
+## Equivariant and Invariant Grounding for Video Question Answering
+
+### codes: https://github.com/yl3800/EIGV
+
+### keypoint:
+
+1. Instead of post-hoc explainability, we focus on intrinsic interpretability to make the answering process transparent. At its core is grounding the question-critical cues as the causal scene to yield answers, while rolling out the question-irrelevant information as the environment scene.
+2. Here we focus on visual-explainability [4, 33], aiming to reveal “Which part of the video should the model look at to answer the question?”
 
 # Multiple images Question Generation:
 
