@@ -72,6 +72,14 @@
 1. Instead of post-hoc explainability, we focus on intrinsic interpretability to make the answering process transparent. At its core is grounding the question-critical cues as the causal scene to yield answers, while rolling out the question-irrelevant information as the environment scene.
 2. Here we focus on visual-explainability [4, 33], aiming to reveal “Which part of the video should the model look at to answer the question?”
 
+## Flamingo: a Visual Language Model for Few-Shot Learning
+
+### codes: https://github.com/lucidrains/flamingo-pytorch
+
+### keypoints:
+
+
+
 # Multiple images Question Generation:
 
 ## Multi-VQG: Generating Engaging Questions for Multiple Images
